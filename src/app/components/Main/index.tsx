@@ -1,9 +1,10 @@
+import Logo from '../Logo'
 import * as Styled from './styles'
 
 const Main = () => {
   return (
     <Styled.Wrapper>
-      <h1>Pokedex</h1>
+      <Logo />
     </Styled.Wrapper>
   )
 }
