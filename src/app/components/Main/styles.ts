@@ -9,7 +9,6 @@ export const Wrapper = styled.main`
     padding: 3rem 0;
     height: 100vh;
     text-align: center;
-    position: absolute;
     height: 100%;
     width: 100%;
 `
