@@ -23,9 +23,18 @@ const CategoryContainer = () => {
       ) : (
         <Styled.CategoryContainer>
           <h1>Filter by:</h1>
-          {types.map((type, index) => {
-            return <PokemonTypeButton typeName={type.name} key={index} />
-          })}
+          <>
+            {types.map((type, index) => {
+              return (
+                <PokemonTypeButton
+                  typeName={type.name}
+                  typeUrl={type.url}
+                  typeColor=""
+                  key={index}
+                />
+              )
+            })}
+          </>
         </Styled.CategoryContainer>
       )}
     </>

@@ -1,25 +1,40 @@
 'use client'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+import { PokemonTypeProps } from '.'
 
-export const PokemonTypeButton = styled.div`
-    color: ${({ theme }) => theme.colors.red};
-    border-radius: ${({ theme }) => theme.border.radius};
-    outline: none;
-    border: transparent;
-    min-width: 15%;
-    max-width: 150px;
-    min-height: 35px;
-    padding: 5px 18px;
-    font-size: ${({ theme }) => theme.font.sizes .medium};
-    margin: ${({ theme }) => theme.spacings.xsmall};
+export type TypeButtonProps = {
+  typeColor: string
+}
 
-    &:hover {
+export const PokemonTypeButton = styled.div<
+  Pick<PokemonTypeProps, 'typeColor'>
+>`
+  ${({ theme, typeColor }) => css`
+    background-color: ${theme.colors[typeColor]};
+  `}
+  color: ${({ theme }) => theme.colors.white};
+  border-radius: 20px;
+  outline: none;
+  border: transparent;
+  min-width: 15%;
+  max-width: 150px;
+  min-height: 35px;
+  padding: ${({ theme }) => theme.spacings.xsmall}
+    ${({ theme }) => theme.spacings.medium};
+  font-size: ${({ theme }) => theme.font.sizes.medium};
+  margin: ${({ theme }) => theme.spacings.xsmall};
+  display: flex;
+  align-items: center;
+  &:hover {
     cursor: pointer;
     transform: translateY(-6px);
-    transition: 0.2s
-    }
+    transition: 0.2s;
+  }
 
-    img {
-        width: 20%;
-    }
+  img {
+    max-width: 15%;
+    margin-right: ${({ theme }) => theme.spacings.xsmall};
+  }
 `
+
+export default PokemonTypeButton
