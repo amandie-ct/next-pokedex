@@ -7,8 +7,8 @@ export const CategoryContainer = styled.section`
   align-items: flex-start;
   justify-content: center;
   height: 20%;
-  width: 85%;
-  border-color: red;
+  width: 90%;
+  border: 1px solid red;
 `
 
 export const ButtonContainer = styled.div`
