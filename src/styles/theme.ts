@@ -13,6 +13,7 @@ const Theme: any = {
     normal: 400,
     bold: 600,
     sizes: {
+      xxsmal: '0.8rem',
       xsmall: '1.2rem',
       small: '1.4rem',
       medium: '1.6rem',

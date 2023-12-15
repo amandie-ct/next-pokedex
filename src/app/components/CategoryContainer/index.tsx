@@ -4,6 +4,7 @@ import * as Styled from './styles'
 import { fetchPokemonTypes } from '@/lib/features/pokemonTypesSlice'
 import store, { AppDispatch, RootState } from '@/lib/store'
 import PokemonTypeButton from '../PokemonTypeButton'
+import { url } from 'inspector'
 
 const CategoryContainer = () => {
   const dispatch: AppDispatch = useDispatch()
@@ -23,7 +24,7 @@ const CategoryContainer = () => {
       ) : (
         <Styled.CategoryContainer>
           <h1>Filter by:</h1>
-          <>
+          <Styled.ButtonContainer>
             {types.map((type, index) => {
               return (
                 <PokemonTypeButton
@@ -34,7 +35,7 @@ const CategoryContainer = () => {
                 />
               )
             })}
-          </>
+          </Styled.ButtonContainer>
         </Styled.CategoryContainer>
       )}
     </>

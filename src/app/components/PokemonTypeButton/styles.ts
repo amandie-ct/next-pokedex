@@ -13,7 +13,7 @@ export const PokemonTypeButton = styled.div<
     background-color: ${theme.colors[typeColor]};
   `}
   color: ${({ theme }) => theme.colors.white};
-  border-radius: 20px;
+  border-radius: 16px;
   outline: none;
   border: transparent;
   min-width: 15%;
@@ -21,8 +21,8 @@ export const PokemonTypeButton = styled.div<
   min-height: 35px;
   padding: ${({ theme }) => theme.spacings.xsmall}
     ${({ theme }) => theme.spacings.medium};
-  font-size: ${({ theme }) => theme.font.sizes.medium};
-  margin: ${({ theme }) => theme.spacings.xsmall};
+  font-size: ${({ theme }) => theme.font.sizes.small};
+  margin: ${({ theme }) => theme.spacings.xxsmall};
   display: flex;
   align-items: center;
   &:hover {
