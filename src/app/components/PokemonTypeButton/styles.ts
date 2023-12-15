@@ -17,8 +17,8 @@ export const PokemonTypeButton = styled.div<
   outline: none;
   border: transparent;
   min-width: 15%;
-  max-width: 150px;
-  min-height: 35px;
+  max-width: 80px;
+  min-height: 20px;
   padding: ${({ theme }) => theme.spacings.xsmall}
     ${({ theme }) => theme.spacings.medium};
   font-size: ${({ theme }) => theme.font.sizes.small};

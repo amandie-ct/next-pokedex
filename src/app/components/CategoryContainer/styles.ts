@@ -7,8 +7,11 @@ export const CategoryContainer = styled.section`
   align-items: flex-start;
   justify-content: center;
   height: 20%;
-  width: 90%;
+  width: 95%;
   border: 1px solid red;
+  h1 {
+    margin-left: ${({ theme }) => theme.spacings.xsmall};
+  }
 `
 
 export const ButtonContainer = styled.div`
