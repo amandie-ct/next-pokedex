@@ -2,7 +2,6 @@
 import styled from 'styled-components'
 
 export const LogoWrapper = styled.div`
-  background: ${({ theme }) => theme.colors.red};
   display: flex;
   flex-direction: column;
   align-items: center;

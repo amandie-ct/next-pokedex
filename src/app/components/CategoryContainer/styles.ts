@@ -8,9 +8,10 @@ export const CategoryContainer = styled.section`
   justify-content: center;
   height: 20%;
   width: 95%;
-  border: 1px solid red;
   h1 {
     margin-left: ${({ theme }) => theme.spacings.xsmall};
+    margin-top: ${({ theme }) => theme.spacings.medium};
+    margin-bottom: ${({ theme }) => theme.spacings.xxsmall};
   }
 `
 
