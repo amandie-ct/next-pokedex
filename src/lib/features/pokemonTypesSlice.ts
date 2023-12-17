@@ -1,8 +1,15 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axios from 'axios'
 
+type TypeProperties = {
+  name: string
+  url: string
+}
+
+type TypePropertiesArray = TypeProperties[]
+
 interface IPokemonTypes {
-  types: []
+  types: TypePropertiesArray
   selectedTypeUrl: string
   loading: boolean
   error: any
@@ -21,7 +28,8 @@ export const fetchPokemonTypes = createAsyncThunk(
     try {
       const response = await axios.get('https://pokeapi.co/api/v2/type/')
       console.log(response.data.results)
-      return response.data.results
+      const parsedResponse: TypePropertiesArray = response.data.results
+      return parsedResponse
     } catch (err) {
       if (err instanceof Error) return rejectWithValue({ error: err.message })
     }
@@ -46,9 +54,9 @@ const pokemonTypeSlice = createSlice({
     builder
       .addCase(fetchPokemonTypes.fulfilled, (state, action) => {
         state.loading = false
-        state.types = action.payload
+        state.types = action.payload ?? []
       })
-      .addCase(fetchPokemonTypes.pending, (state, action) => {
+      .addCase(fetchPokemonTypes.pending, (state) => {
         state.loading = true
       })
       .addCase(fetchPokemonTypes.rejected, (state, action) => {
