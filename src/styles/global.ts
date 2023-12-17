@@ -1,6 +1,6 @@
 'use client'
 
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyles = createGlobalStyle`
 * {
@@ -18,7 +18,7 @@ html, body, #__next {
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 `
 

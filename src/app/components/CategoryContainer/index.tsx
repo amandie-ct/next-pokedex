@@ -4,6 +4,7 @@ import * as Styled from './styles'
 import { fetchPokemonTypes } from '@/lib/features/pokemonTypesSlice'
 import store, { AppDispatch, RootState } from '@/lib/store'
 import PokemonTypeButton from '../PokemonTypeButton'
+import ClearButton from '../ClearButton'
 
 const CategoryContainer = () => {
   const dispatch: AppDispatch = useDispatch()
@@ -18,11 +19,11 @@ const CategoryContainer = () => {
 
   return (
     <>
-      {loading ? (
-        <p>Loading...</p>
-      ) : (
-        <Styled.CategoryContainer>
-          <h1>Filter by:</h1>
+      <Styled.CategoryContainer>
+        <h1>Filter by:</h1>
+        {loading ? (
+          <p>Loading...</p>
+        ) : (
           <Styled.ButtonContainer>
             {types.map((type, index) => {
               return (
@@ -34,9 +35,10 @@ const CategoryContainer = () => {
                 />
               )
             })}
+            <ClearButton />
           </Styled.ButtonContainer>
-        </Styled.CategoryContainer>
-      )}
+        )}
+      </Styled.CategoryContainer>
     </>
   )
 }

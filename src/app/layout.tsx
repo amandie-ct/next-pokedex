@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Quicksand } from 'next/font/google'
 import StyledJsxRegistry from '@/lib/registry'
 import { Providers } from './providers'
 
-const inter = Inter({ subsets: ['latin'] })
+const quicksand = Quicksand({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Pokedex',
@@ -16,8 +16,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" className={quicksand.className}>
+      <body className={quicksand.className}>
         <StyledJsxRegistry>
           <Providers>{children}</Providers>
         </StyledJsxRegistry>
