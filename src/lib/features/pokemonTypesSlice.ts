@@ -27,7 +27,6 @@ export const fetchPokemonTypes = createAsyncThunk(
   async (a, { rejectWithValue }) => {
     try {
       const response = await axios.get('https://pokeapi.co/api/v2/type/')
-      console.log(response.data.results)
       const parsedResponse: TypePropertiesArray = response.data.results
       return parsedResponse
     } catch (err) {
