@@ -7,9 +7,7 @@ import PokemonCard from '../PokemonCard'
 
 const CardsContainer = () => {
   const dispatch: AppDispatch = useDispatch()
-  const { list, loading, id } = useSelector(
-    (state: RootState) => state.pokemonList
-  )
+  const { list, loading } = useSelector((state: RootState) => state.pokemonList)
 
   useEffect(() => {
     dispatch(fetchPokemonList())
@@ -24,7 +22,11 @@ const CardsContainer = () => {
         ) : (
           <>
             {list.map((pokemon, index) => (
-              <PokemonCard pokemonName={pokemon.name} id={4} key={index} />
+              <PokemonCard
+                pokemonName={pokemon.name}
+                id={pokemon.id}
+                key={index}
+              />
             ))}
           </>
         )}

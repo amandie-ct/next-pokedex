@@ -8,9 +8,10 @@ export const CategoryContainer = styled.section`
   justify-content: center;
   height: 20%;
   width: 95%;
+  padding-top: ${({ theme }) => theme.spacings.large};
   h1 {
-    margin-left: ${({ theme }) => theme.spacings.xsmall};
     margin-top: ${({ theme }) => theme.spacings.medium};
+    margin-left: ${({ theme }) => theme.spacings.xsmall};
     margin-bottom: ${({ theme }) => theme.spacings.xxsmall};
   }
 `
@@ -20,4 +21,5 @@ export const ButtonContainer = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: left;
+  width: 100%;
 `

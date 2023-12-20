@@ -6,12 +6,13 @@ export const ClearButton = styled.button`
   color: ${({ theme }) => theme.colors.red};
   border: 2px solid ${({ theme }) => theme.colors.red};
   border-radius: 16px;
-  outline: none;
-  min-width: 12%;
+  min-width: 10%;
   max-width: 70px;
-  min-height: 20px;
-  padding: ${({ theme }) => theme.spacings.xsmall}
-    ${({ theme }) => theme.spacings.medium};
+  min-height: 26px;
+  padding: ${({ theme }) => theme.spacings.xsmall};
+  ${({ theme }) => theme.spacings.small};
+  font-size: ${({ theme }) => theme.font.sizes.small};
+  font-family: ${({ theme }) => theme.font.family};
   margin: ${({ theme }) => theme.spacings.xxsmall};
   display: flex;
   align-items: center;
@@ -19,10 +20,7 @@ export const ClearButton = styled.button`
     cursor: pointer;
     transform: translateY(-6px);
     transition: 0.2s;
-  }
-
-  h3 {
-    font-size: ${({ theme }) => theme.font.small};
-    font-family: ${({ theme }) => theme.font.family};
+    background: ${({ theme }) => theme.colors.red};
+    color: ${({ theme }) => theme.colors.white};
   }
 `

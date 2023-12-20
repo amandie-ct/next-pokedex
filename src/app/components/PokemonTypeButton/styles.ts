@@ -16,11 +16,11 @@ export const PokemonTypeButton = styled.div<
   border-radius: 16px;
   outline: none;
   border: transparent;
-  min-width: 12%;
+  min-width: 10%;
   max-width: 70px;
   min-height: 20px;
-  padding: ${({ theme }) => theme.spacings.xsmall}
-    ${({ theme }) => theme.spacings.medium};
+  padding: ${({ theme }) => theme.spacings.xsmall};
+  ${({ theme }) => theme.spacings.small};
   font-size: ${({ theme }) => theme.font.sizes.small};
   margin: ${({ theme }) => theme.spacings.xxsmall};
   display: flex;
@@ -32,8 +32,8 @@ export const PokemonTypeButton = styled.div<
   }
 
   img {
-    max-width: 15%;
-    margin-right: ${({ theme }) => theme.spacings.xsmall};
+    max-height: 25px;
+    margin-right: ${({ theme }) => theme.spacings.xxsmall};
   }
 `
 
