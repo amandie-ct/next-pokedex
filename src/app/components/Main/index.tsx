@@ -2,7 +2,7 @@ import * as Styled from './styles'
 import Logo from '../Logo'
 import CategoryContainer from '../CategoryContainer'
 import BackgroundImg from '../BackgroundImg'
-import PokemonCard from '../PokemonCard'
+import CardsContainer from '../CardsContainer'
 
 const Main = () => {
   return (
@@ -13,7 +13,7 @@ const Main = () => {
           <Logo />
         </>
         <CategoryContainer />
-        <PokemonCard />
+        <CardsContainer />
       </Styled.Wrapper>
     </>
   )
