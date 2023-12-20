@@ -1,6 +1,7 @@
 import { extractValueFromUrl } from '@/app/utils/extractValueFromUrl'
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axios from 'axios'
+import { staticGenerationAsyncStorage } from 'next/dist/client/components/static-generation-async-storage.external'
 
 type pokemon = {
   name: string
@@ -11,14 +12,14 @@ type pokemonArray = pokemon[]
 
 interface IPokemonList {
   list: pokemonArray
-  id: string
+  id: string[]
   loading: boolean
   error: any
 }
 
 const initialState: IPokemonList = {
   list: [],
-  id: '',
+  id: [],
   loading: false,
   error: null
 }
@@ -40,15 +41,19 @@ const pokemonListSlice = createSlice({
   name: 'pokemon_list',
   initialState,
   reducers: {
-    setPokemonId: (state, action) => {
-      state.id = extractValueFromUrl(action.payload.url)
-    }
+    // setPokemonId: (state, action) => {
+    //   state[id].push({
+    //     id: extractValueFromUrl(action.payload)})
+    // }
   },
   extraReducers: (builder) => {
     builder
       .addCase(fetchPokemonList.fulfilled, (state, action) => {
         state.loading = false
         state.list = action.payload ?? []
+        state.id =
+          action.payload?.map((pokemon) => extractValueFromUrl(pokemon.url)) ??
+          []
       })
       .addCase(fetchPokemonList.pending, (state) => {
         state.loading = true

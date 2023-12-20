@@ -3,12 +3,13 @@ import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import store, { AppDispatch, RootState } from '@/lib/store'
 import { fetchPokemonList } from '@/lib/features/pokemonListSlice'
-import setPokemonId from '@/lib/features/pokemonListSlice'
 import PokemonCard from '../PokemonCard'
 
 const CardsContainer = () => {
   const dispatch: AppDispatch = useDispatch()
-  const { list, loading } = useSelector((state: RootState) => state.pokemonList)
+  const { list, loading, id } = useSelector(
+    (state: RootState) => state.pokemonList
+  )
 
   useEffect(() => {
     dispatch(fetchPokemonList())
@@ -22,8 +23,8 @@ const CardsContainer = () => {
           <p>loading...</p>
         ) : (
           <>
-            {list.map((pokemon) => (
-              <PokemonCard pokemonName={pokemon.name} id={3} />
+            {list.map((pokemon, index) => (
+              <PokemonCard pokemonName={pokemon.name} id={4} key={index} />
             ))}
           </>
         )}

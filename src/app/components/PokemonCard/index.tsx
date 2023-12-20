@@ -7,7 +7,7 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 
 interface PokemonCardProps {
   pokemonName: string
-  id: number
+  id: any
 }
 
 const PokemonCard = ({ id, pokemonName }: PokemonCardProps) => {
