@@ -6,25 +6,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 
 interface PokemonCardProps {
+  pokemonName: string
   id: number
 }
 
-const PokemonCard = ({ id }: PokemonCardProps) => {
-  const [pokemonName, setPokemonName] = useState('')
-
-  const fetchPokemonCard = async () => {
-    const response = await axios.get('https://pokeapi.co/api/v2/type/normal')
-    setPokemonName(response.data.pokemon[0].pokemon.name)
-    const extractedId = extractValueFromUrl(
-      response.data.pokemon[0].pokemon.url
-    )?.toString()
-    console.log(extractedId)
-    return { extractedId, pokemonName }
-  }
-  useEffect(() => {
-    fetchPokemonCard()
-  }, [])
-
+const PokemonCard = ({ id, pokemonName }: PokemonCardProps) => {
   return (
     <Styled.PokemonCard>
       <img

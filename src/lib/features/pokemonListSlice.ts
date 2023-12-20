@@ -2,22 +2,22 @@ import { extractValueFromUrl } from '@/app/utils/extractValueFromUrl'
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axios from 'axios'
 
-type pokemonProperties = {
+type pokemon = {
   name: string
   url: string
 }
 
-type pokemonPropertiesArray = pokemonProperties[]
+type pokemonArray = pokemon[]
 
 interface IPokemonList {
-  pokemonList: pokemonPropertiesArray
+  list: pokemonArray
   id: string
   loading: boolean
   error: any
 }
 
 const initialState: IPokemonList = {
-  pokemonList: [],
+  list: [],
   id: '',
   loading: false,
   error: null
@@ -28,7 +28,7 @@ export const fetchPokemonList = createAsyncThunk(
   async (a, { rejectWithValue }) => {
     try {
       const response = await axios.get('https://pokeapi.co/api/v2/pokemon/')
-      const parsedResponse: pokemonPropertiesArray = response.data.results
+      const parsedResponse: pokemonArray = response.data.results
       return parsedResponse
     } catch (err) {
       if (err instanceof Error) return rejectWithValue({ error: err.message })
@@ -48,7 +48,7 @@ const pokemonListSlice = createSlice({
     builder
       .addCase(fetchPokemonList.fulfilled, (state, action) => {
         state.loading = false
-        state.pokemonList = action.payload ?? []
+        state.list = action.payload ?? []
       })
       .addCase(fetchPokemonList.pending, (state) => {
         state.loading = true
