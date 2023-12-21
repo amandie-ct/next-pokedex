@@ -6,38 +6,49 @@ type pokemonDetails = {
   height: number
   weight: number
   img: string
-  pokemon_name: string
-  pokemon_number: string
+  name: string
+  number: string
   stats: string
-  abilities: string
+  abilities: {}[]
   pokemon_type: string
 }
 
-type pokemonDetailsArray = pokemonDetails[]
+// type pokemonDetailsArray = pokemonDetails[]
 
 interface IPokemonDetails {
-  details: pokemonDetailsArray
+  details: pokemonDetails
   loading: boolean
   error: any
 }
 
 const initialState: IPokemonDetails = {
-  details: [],
+  details: {
+    base_experience: 0,
+    height: 0,
+    weight: 0,
+    img: '',
+    name: '',
+    number: '',
+    stats: '',
+    abilities: [],
+    pokemon_type: ''
+  },
   loading: false,
   error: null
 }
 
 export const fetchPokemonDetails = createAsyncThunk(
   'fetchPokemonDetails',
-  async (id, { rejectWithValue }) => {
+  async (id: string, { rejectWithValue }) => {
     try {
       const response = await axios.get(
         `https://pokeapi.co/api/v2/pokemon/${id}`
       )
-      const parsedResponse: pokemonDetailsArray = response.data
+      const parsedResponse: pokemonDetails = response.data
       return parsedResponse
     } catch (err) {
       if (err instanceof Error) return rejectWithValue({ error: err.message })
+      throw Error
     }
   }
 )
