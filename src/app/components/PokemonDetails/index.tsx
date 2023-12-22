@@ -31,12 +31,13 @@ const PokemonDetails = ({ id }: IPokemonDetailsProps) => {
         <p>loading...</p>
       ) : (
         <>
-          return (
           <Styled.Container>
-            <Styled.PokemonImg />
+            <Styled.PokemonImg
+              src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}
+            />
             <Styled.MainInfo>
               <h2>{details.name}</h2>
-              <h1>{details.number}</h1>
+              <h1>#{details.id}</h1>
             </Styled.MainInfo>
             <Styled.Characteristics>
               <h3>Characteristics</h3>
@@ -53,16 +54,17 @@ const PokemonDetails = ({ id }: IPokemonDetailsProps) => {
               </p>
               <hr></hr>
               <p>Abilities:</p>
-              {details.abilities.map((ability, index) => {
-                return (
-                  <Styled.Ability key={index}>
-                    {ability.ability.name}
-                  </Styled.Ability>
-                )
-              })}
+              <Styled.AbilityContainer>
+                {details.abilities.map((ability, index) => {
+                  return (
+                    <Styled.Ability key={index}>
+                      {ability.ability.name}
+                    </Styled.Ability>
+                  )
+                })}
+              </Styled.AbilityContainer>
             </Styled.Characteristics>
           </Styled.Container>
-          )
         </>
       )}
     </Styled.Main>

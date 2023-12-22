@@ -26,9 +26,10 @@ export const ReturnButton = styled.button`
   border: none;
   width: fit-content;
   outline: none;
+`
 
-  font-size: 18px;
-  font-weight: ${({ theme }) => theme.font.bold};
+export const ImgContainer = styled.section`
+  width: 30%;
 `
 
 export const PokemonImg = styled.img`
@@ -37,11 +38,21 @@ export const PokemonImg = styled.img`
 
 export const MainInfo = styled.section`
   display: flex;
+  flex-direction: column;
+
+  width: 30%;
 `
 
 export const Characteristics = styled.section`
   display: flex;
   flex-direction: column;
+  width: 30%;
+`
+
+export const AbilityContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `
 
 export const Ability = styled.div`

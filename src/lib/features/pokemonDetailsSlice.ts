@@ -1,19 +1,23 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axios from 'axios'
 
+type Abilities = {
+  ability: string
+  is_hidden: boolean
+  slot: number
+}
+
 type pokemonDetails = {
   base_experience: number
   height: number
   weight: number
   img: string
   name: string
-  number: string
+  id: number
   stats: string
-  abilities: {}[]
+  abilities: Abilities[]
   pokemon_type: string
 }
-
-// type pokemonDetailsArray = pokemonDetails[]
 
 interface IPokemonDetails {
   details: pokemonDetails
@@ -28,7 +32,7 @@ const initialState: IPokemonDetails = {
     weight: 0,
     img: '',
     name: '',
-    number: '',
+    id: 0,
     stats: '',
     abilities: [],
     pokemon_type: ''
