@@ -58,6 +58,7 @@ const PokemonDetails = ({ id }: IPokemonDetailsProps) => {
                 {details.abilities.map((ability, index) => {
                   return (
                     <Styled.Ability key={index}>
+                      {/* @ts-ignore:next-line */}
                       {ability.ability.name}
                     </Styled.Ability>
                   )
