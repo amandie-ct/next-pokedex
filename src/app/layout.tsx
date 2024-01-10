@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { Quicksand } from 'next/font/google'
 import StyledJsxRegistry from '@/lib/registry'
 import { Providers } from './providers'
+import BackgroundImg from './components/BackgroundImg'
+import Logo from './components/Logo'
 
 const quicksand = Quicksand({ subsets: ['latin'] })
 
@@ -19,7 +21,13 @@ export default function RootLayout({
     <html lang="en" className={quicksand.className}>
       <body className={quicksand.className}>
         <StyledJsxRegistry>
-          <Providers>{children}</Providers>
+          <Providers>
+            <>
+              <BackgroundImg />
+              <Logo />
+            </>
+            {children}
+          </Providers>
         </StyledJsxRegistry>
       </body>
     </html>

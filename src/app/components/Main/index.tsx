@@ -9,10 +9,6 @@ const Main = () => {
   return (
     <>
       <Styled.Wrapper>
-        <>
-          <BackgroundImg />
-          <Logo />
-        </>
         <CategoryContainer />
         <CardsContainer />
       </Styled.Wrapper>
