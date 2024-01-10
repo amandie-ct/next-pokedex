@@ -5,6 +5,7 @@ import store, { AppDispatch, RootState } from '@/lib/store'
 import { useDispatch, useSelector } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
+import Link from 'next/link'
 
 interface IPokemonDetailsProps {
   id: string
@@ -23,10 +24,13 @@ const PokemonDetails = ({ id }: IPokemonDetailsProps) => {
 
   return (
     <Styled.Main>
-      <Styled.ReturnButton>
-        <FontAwesomeIcon icon={faChevronLeft} />
-        <h3>Back</h3>
-      </Styled.ReturnButton>
+      <Link href="/">
+        <Styled.ReturnButton>
+          <FontAwesomeIcon icon={faChevronLeft} />
+          <h3>Back</h3>
+        </Styled.ReturnButton>
+      </Link>
+
       {loading ? (
         <p>loading...</p>
       ) : (
