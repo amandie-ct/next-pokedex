@@ -5,7 +5,10 @@ import { Providers } from './providers'
 import BackgroundImg from './components/BackgroundImg'
 import Logo from './components/Logo'
 
-const quicksand = Quicksand({ subsets: ['latin'] })
+const quicksand = Quicksand({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700']
+})
 
 export const metadata: Metadata = {
   title: 'Pokedex',

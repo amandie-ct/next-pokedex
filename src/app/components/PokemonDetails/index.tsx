@@ -34,43 +34,41 @@ const PokemonDetails = ({ id }: IPokemonDetailsProps) => {
       {loading ? (
         <p>loading...</p>
       ) : (
-        <>
-          <Styled.Container>
-            <Styled.PokemonImg
-              src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}
-            />
-            <Styled.MainInfo>
-              <h2>{details.name}</h2>
-              <h1>#{details.id}</h1>
-            </Styled.MainInfo>
-            <Styled.Characteristics>
-              <h3>Characteristics</h3>
-              <p>
-                Base experience:&nbsp;<span>{details.base_experience}</span>
-              </p>
-              <hr></hr>
-              <p>
-                Height:&nbsp;<span>{details.height}&nbsp;</span>
-              </p>
-              <hr></hr>
-              <p>
-                Weight:&nbsp;<span>{details.weight}&nbsp;kg</span>
-              </p>
-              <hr></hr>
-              <p>Abilities:</p>
-              <Styled.AbilityContainer>
-                {details.abilities.map((ability, index) => {
-                  return (
-                    <Styled.Ability key={index}>
-                      {/* @ts-ignore:next-line */}
-                      {ability.ability.name}
-                    </Styled.Ability>
-                  )
-                })}
-              </Styled.AbilityContainer>
-            </Styled.Characteristics>
-          </Styled.Container>
-        </>
+        <Styled.Container>
+          <Styled.PokemonImg
+            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}
+          />
+          <Styled.MainInfo>
+            <h2>{details.name}</h2>
+            <h1>#{details.id}</h1>
+          </Styled.MainInfo>
+          <Styled.Characteristics>
+            <h2>Characteristics</h2>
+            <p>
+              Base experience:&nbsp;<span>{details.base_experience}</span>
+            </p>
+            <hr></hr>
+            <p>
+              Height:&nbsp;<span>{details.height / 10}&nbsp;m</span>
+            </p>
+            <hr></hr>
+            <p>
+              Weight:&nbsp;<span>{details.weight / 10}&nbsp;kg</span>
+            </p>
+            <hr></hr>
+            <p>Abilities:</p>
+            <Styled.AbilityContainer>
+              {details.abilities.map((ability, index) => {
+                return (
+                  <Styled.Ability key={index}>
+                    {/* @ts-ignore:next-line */}
+                    {ability.ability.name}
+                  </Styled.Ability>
+                )
+              })}
+            </Styled.AbilityContainer>
+          </Styled.Characteristics>
+        </Styled.Container>
       )}
     </Styled.Main>
   )

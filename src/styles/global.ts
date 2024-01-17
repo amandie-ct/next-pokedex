@@ -20,6 +20,7 @@ html, body, #__next {
 body {
     font-family: 'Quicksand', sans-serif;
 }
+
 `
 
 export default GlobalStyles
