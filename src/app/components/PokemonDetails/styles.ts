@@ -40,6 +40,11 @@ export const ReturnButton = styled.div`
   h3 {
     padding-left: ${({ theme }) => theme.spacings.xxsmall};
   }
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.darkerRed};
+    transition: 0.2s ease-in;
+  }
 `
 
 export const PokemonImg = styled.img`
@@ -50,6 +55,11 @@ export const MainInfo = styled.section`
   display: flex;
   flex-direction: column;
   font-size: ${({ theme }) => theme.font.sizes.xxlarge};
+  text-transform: capitalize;
+
+  h1 {
+    color: ${({ theme }) => theme.colors.gray};
+  }
 `
 
 export const Characteristics = styled.section`
@@ -75,13 +85,20 @@ export const AbilityContainer = styled.div`
 `
 
 export const Ability = styled.div`
-  background-color: ${({ theme }) => theme.colors.red};
-  padding: ${({ theme }) => theme.spacings.small};
+  background-color: ${({ theme }) => theme.colors.poison};
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 2px 6px;
+  padding: ${({ theme }) => theme.spacings.xsmall}
+    ${({ theme }) => theme.spacings.small};
   font-size: ${({ theme }) => theme.font.sizes.medium};
   margin-right: ${({ theme }) => theme.spacings.small};
+  color: ${({ theme }) => theme.colors.white};
+  border-radius: ${({ theme }) => theme.border.radius};
+
+  &:nth-child(2) {
+    background-color: ${({ theme }) => theme.colors.grass};
+  }
 
   &:hover {
-    cursor: pointer;
     transform: translateY(-6px);
     transition: 0.2s;
   }

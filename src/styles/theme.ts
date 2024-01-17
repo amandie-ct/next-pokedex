@@ -25,6 +25,7 @@ const Theme: any = {
   colors: {
     white: '#FFFFFF',
     red: '#F2756F',
+    darkerRed: '#d94841',
     mainBg: '#06092B',
     lightBg: '#F2F2F2',
     black: '#030517',
