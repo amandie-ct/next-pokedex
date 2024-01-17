@@ -93,6 +93,7 @@ export const Ability = styled.div`
   margin-right: ${({ theme }) => theme.spacings.small};
   color: ${({ theme }) => theme.colors.white};
   border-radius: ${({ theme }) => theme.border.radius};
+  font-weight: bold;
 
   &:nth-child(2) {
     background-color: ${({ theme }) => theme.colors.grass};
