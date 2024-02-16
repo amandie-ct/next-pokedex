@@ -1,5 +1,7 @@
 import * as Styled from './styles'
-import { extractValueFromUrl } from '@/app/utils/extractValueFromUrl'
+import { fetchPokemonListByType } from '@/lib/features/pokemonListSlice'
+import { AppDispatch, RootState } from '@/lib/store'
+import { useDispatch, useSelector } from 'react-redux'
 export interface PokemonTypeProps {
   typeName: string
   typeUrl: string
@@ -11,8 +13,9 @@ const PokemonTypeButton: React.FC<PokemonTypeProps> = ({
   typeUrl,
   typeColor = 'white'
 }) => {
+  const dispatch: AppDispatch = useDispatch()
   const handleClick = () => {
-    console.log(extractValueFromUrl(typeUrl))
+    dispatch(fetchPokemonListByType(typeName))
   }
 
   return (

@@ -41,12 +41,6 @@ const pokemonTypeSlice = createSlice({
   reducers: {
     getTypes: (state, action) => {
       state.types = action.payload.types
-    },
-    selectType: (state, action) => {
-      state.selectedTypeUrl = action.payload.selectedTypeUrl
-    },
-    clearSelectedType: (state) => {
-      state.selectedTypeUrl = ''
     }
   },
   extraReducers: (builder) => {

@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 interface PokemonCardProps {
   pokemonName: string
-  id: any
+  id: string | undefined
 }
 
 const PokemonCard = ({ id, pokemonName }: PokemonCardProps) => {

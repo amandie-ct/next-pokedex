@@ -4,10 +4,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import store, { AppDispatch, RootState } from '@/lib/store'
 import { fetchPokemonList } from '@/lib/features/pokemonListSlice'
 import PokemonCard from '../PokemonCard'
+import { extractValueFromUrl } from '@/app/utils/extractValueFromUrl'
 
 const CardsContainer = () => {
   const dispatch: AppDispatch = useDispatch()
-  const { list, loading } = useSelector((state: RootState) => state.pokemonList)
+  const { sharedList, loading } = useSelector(
+    (state: RootState) => state.pokemonList
+  )
 
   useEffect(() => {
     dispatch(fetchPokemonList())
@@ -21,10 +24,10 @@ const CardsContainer = () => {
           <p>loading...</p>
         ) : (
           <>
-            {list.map((pokemon, index) => (
+            {sharedList.map((pokemon, index) => (
               <PokemonCard
                 pokemonName={pokemon.name}
-                id={pokemon.id}
+                id={extractValueFromUrl(pokemon.url)}
                 key={index}
               />
             ))}
