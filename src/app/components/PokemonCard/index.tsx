@@ -1,7 +1,4 @@
-import { useEffect, useState } from 'react'
-import axios from 'axios'
 import * as Styled from './styles'
-import { extractValueFromUrl } from '@/app/utils/extractValueFromUrl'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
@@ -21,7 +18,7 @@ const PokemonCard = ({ id, pokemonName }: PokemonCardProps) => {
         <h3>{pokemonName}</h3>
         <h3>#${id}</h3>
       </Styled.PokemonDetails>
-      <Link href="/pokemon">
+      <Link href={`/pokemon/${id}`}>
         <Styled.DetailsButton>
           <FontAwesomeIcon icon={faChevronRight} />
         </Styled.DetailsButton>
