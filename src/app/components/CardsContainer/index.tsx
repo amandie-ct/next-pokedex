@@ -5,6 +5,7 @@ import store, { AppDispatch, RootState } from '@/lib/store'
 import { fetchPokemonList } from '@/lib/features/pokemonListSlice'
 import PokemonCard from '../PokemonCard'
 import { extractValueFromUrl } from '@/app/utils/extractValueFromUrl'
+import Loader from '../Loader'
 
 const CardsContainer = () => {
   const dispatch: AppDispatch = useDispatch()
@@ -21,7 +22,7 @@ const CardsContainer = () => {
     <>
       <Styled.CardsContainer>
         {loading ? (
-          <p>loading...</p>
+          <Loader />
         ) : (
           <>
             {sharedList.map((pokemon, index) => (
