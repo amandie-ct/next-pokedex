@@ -13,6 +13,7 @@ export const LoaderWrapper = styled.div`
   width: 150px;
   height: 150px;
   position: relative;
+  top: 50%;
   margin: 0 auto;
 `
 
