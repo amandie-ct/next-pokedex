@@ -8,17 +8,17 @@ interface PokemonCardProps {
   id: string | undefined
 }
 
-const PokemonCard = ({ id, pokemonName }: PokemonCardProps) => {
+const PokemonCard = (props: PokemonCardProps) => {
   return (
     <Styled.PokemonCard>
       <img
-        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}
+        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${props.id}.png`}
       />
       <Styled.PokemonDetails>
-        <h3>{pokemonName}</h3>
-        <h3>#${id}</h3>
+        <h3>{props.pokemonName}</h3>
+        <h3>#${props.id}</h3>
       </Styled.PokemonDetails>
-      <Link href={`/pokemon/${id}`}>
+      <Link href={`/pokemon/${props.id}`}>
         <Styled.DetailsButton>
           <FontAwesomeIcon icon={faChevronRight} />
         </Styled.DetailsButton>
