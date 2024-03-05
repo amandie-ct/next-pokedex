@@ -24,6 +24,8 @@ const initialState: IPokemonList = {
   nextPage: null
 }
 
+export const baseUrl = 'https://pokeapi.co/api/v2/pokemon'
+
 export const fetchPokemonList = createAsyncThunk(
   'fetchPokemonList',
   async (url: string, { rejectWithValue }) => {
@@ -54,7 +56,9 @@ export const fetchPokemonListByType = createAsyncThunk(
 const pokemonListSlice = createSlice({
   name: 'pokemon_list',
   initialState,
-  reducers: {},
+  reducers: {
+    reset: () => initialState
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchPokemonList.fulfilled, (state, action) => {
@@ -101,5 +105,7 @@ export const selectPokemonList = (state: { pokemonList: IPokemonList }) =>
 
 export const selectNextPage = (state: { pokemonList: IPokemonList }) =>
   state.pokemonList.nextPage
+
+export const { reset } = pokemonListSlice.actions
 
 export default pokemonListSlice.reducer

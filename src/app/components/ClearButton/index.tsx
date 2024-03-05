@@ -1,13 +1,18 @@
 import { useDispatch } from 'react-redux'
 import * as Styled from './styles'
 import { AppDispatch } from '@/lib/store'
-import { fetchPokemonList } from '@/lib/features/pokemonListSlice'
+import {
+  fetchPokemonList,
+  reset,
+  baseUrl
+} from '@/lib/features/pokemonListSlice'
 
 const ClearButton: React.FC = () => {
   const dispatch: AppDispatch = useDispatch()
 
   const handleClear = () => {
-    dispatch(fetchPokemonList('https://pokeapi.co/api/v2/pokemon'))
+    dispatch(reset())
+    dispatch(fetchPokemonList(baseUrl))
   }
 
   return (

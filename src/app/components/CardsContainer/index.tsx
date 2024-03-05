@@ -5,7 +5,8 @@ import store, { AppDispatch, RootState } from '@/lib/store'
 import {
   fetchPokemonList,
   selectNextPage,
-  selectPokemonList
+  selectPokemonList,
+  baseUrl
 } from '@/lib/features/pokemonListSlice'
 import PokemonCard from '../PokemonCard'
 import { extractValueFromUrl } from '@/app/utils/extractValueFromUrl'
@@ -18,7 +19,6 @@ const CardsContainer = () => {
   const pokemonList = useSelector(selectPokemonList)
   const nextPage = useSelector(selectNextPage)
   const observer = useRef<HTMLDivElement>(null)
-  const baseUrl = 'https://pokeapi.co/api/v2/pokemon'
 
   useEffect(() => {
     dispatch(fetchPokemonList(baseUrl))
