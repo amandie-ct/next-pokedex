@@ -12,7 +12,7 @@ export const ClearButton = styled.button`
   padding: ${({ theme }) => theme.spacings.xsmall};
   ${({ theme }) => theme.spacings.small};
   font-size: ${({ theme }) => theme.font.sizes.small};
-  font-family: ${({ theme }) => theme.font.family};
+  font-family: ${({ theme }) => theme.font.family}, sans-serif;
   margin: ${({ theme }) => theme.spacings.xxsmall};
   display: flex;
   align-items: center;
